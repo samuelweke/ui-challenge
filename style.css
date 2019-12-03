@@ -9,14 +9,15 @@ body {
 
 main{
   margin-top: 60px;
+  background-color: #ffffff;
+  margin: auto;
+  width: 72%;
+  border-radius: 4px;
 }
 
 table {
-  background-color: #ffffff;
-  margin: auto;
-  width: 70%;
-  border-collapse: collapse;
-  border-radius: 4px;
+ width: 100%;  
+ border-collapse: collapse;
 }
 table th, table td{
   padding: .75rem;
@@ -27,7 +28,7 @@ thead th{
 }
 
 tbody tr:nth-child(odd){
-  background-color: #cacaca;
+  background-color: #f0f0f0;
   border-spacing: initial;
 }
 

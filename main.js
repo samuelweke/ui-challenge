@@ -18,7 +18,7 @@ fetch(url)
         ` <td>${coin.name}</td>
           <td>${coin.symbol}</td>
           <td>&dollar; ${coin.price_usd}</td>
-          <td>${coin.tsupply}</td>  `;
+          <td>${coin.tsupply} ${coin.symbol}</td>  `;
       tbody.appendChild(tr);  
     })
   })
