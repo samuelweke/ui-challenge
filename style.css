@@ -6,4 +6,28 @@ body {
     line-height: 1.4;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
   }
-  
+
+main{
+  margin-top: 60px;
+}
+
+table {
+  background-color: #ffffff;
+  margin: auto;
+  width: 70%;
+  border-collapse: collapse;
+  border-radius: 4px;
+}
+table th, table td{
+  padding: .75rem;
+}
+
+thead th{
+  text-align: left;
+}
+
+tbody tr:nth-child(odd){
+  background-color: #cacaca;
+  border-spacing: initial;
+}
+
