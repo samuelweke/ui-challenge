@@ -15,10 +15,10 @@ fetch(url)
       const tbody = document.querySelector('tbody');
       const tr = document.createElement('tr');
       tr.innerHTML = 
-        ` <td>${coin.name}</td>
-          <td>${coin.symbol}</td>
-          <td>&dollar; ${coin.price_usd}</td>
-          <td>${coin.tsupply} ${coin.symbol}</td>  `;
+        ` <td data-title="💰 Coin">${coin.name}</td>
+          <td data-title="📄 Code">${coin.symbol}</td>
+          <td data-title="🤑 Price">&dollar; ${coin.price_usd}</td>
+          <td data-title="📉 Total Supply">${coin.tsupply} ${coin.symbol}</td>  `;
       tbody.appendChild(tr);  
     })
   })
