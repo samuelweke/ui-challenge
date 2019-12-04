@@ -23,7 +23,7 @@ main{
 
 .wrap-table{
   background-color: #ffffff;
-  width: 800px;
+  width: 650px;
   overflow: hidden;
   border-radius: 8px 8px 0 0;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
@@ -48,7 +48,45 @@ tbody tr:nth-child(odd){
   border-spacing: initial;
 }
 
+nav{
+  background-color: #f0f0f0;
+  padding: .75rem;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+nav ul a{
+  color: inherit;
+  text-decoration: none;
+  padding: 5px;
+}
+
+nav ul a:focus{
+  border: 1px solid #f5d567;
+}
+
+.fa-arrow-left{
+  margin-right: 2px;
+  -webkit-text-stroke: 1px #f0f0f0;
+}
+.fa-arrow-right{
+  margin-left: 2px;
+  -webkit-text-stroke: 1px #f0f0f0;
+}
+
 @media (max-width: 600px) {
+  body {
+    margin-top: 6px;
+    margin-right: 10px;
+  }
   .wrap-table{
     border-radius: 0;
   }
