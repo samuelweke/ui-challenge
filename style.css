@@ -28,7 +28,7 @@ main{
   border-radius: 8px 8px 0px 0px;
   box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  /* -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15); */
+  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
   -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
   -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
 }
@@ -37,11 +37,9 @@ table {
  width: 100%;  
  border-collapse: collapse;
 }
+
 table th, table td{
   padding: .75rem;
-}
-
-thead th{
   text-align: left;
 }
 
@@ -51,31 +49,32 @@ tbody tr:nth-child(odd){
 }
 
 @media (max-width: 600px) {
-  table,
-  tbody {
-      display: block;
-      width: 100%;
+  .wrap-table{
+    border-radius: 0;
   }
-  thead { display: none; }
-  table tr,
-  table th,
+  
+  thead { 
+    display: none;
+  }
+
+  table tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   table td {
-      display: block;
-      padding: 0;
-      text-align: left;
-      white-space: normal;
+    padding: 0;
+    flex-basis: 50%;
   }
-table th[data-title]:before,
-table td[data-title]:before {
+
+  table th[data-title]:before, table td[data-title]:before {
     content: attr(data-title) "\A";
     font-weight: bold;
     white-space: pre-wrap;
-}
-table td {
-  border: none;
-  margin-bottom: 6px;
-  color: #444;
-}
-table td:empty { display: none; }
+  }
+/* 
+  table td:empty {
+     display: none;
+  } */
 
 }
