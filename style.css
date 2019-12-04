@@ -25,12 +25,12 @@ main{
   background-color: #ffffff;
   width: 800px;
   overflow: hidden;
-  border-radius: 8px 8px 0px 0px;
-  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
 }
 
 table {
@@ -60,11 +60,13 @@ tbody tr:nth-child(odd){
   table tr {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 15px;
   }
 
   table td {
     padding: 0;
     flex-basis: 50%;
+    margin: 10px 0 10px 0;;
   }
 
   table th[data-title]:before, table td[data-title]:before {
