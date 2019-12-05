@@ -5,55 +5,52 @@
  *    Get 10 coins per "page"
  */
 
-
-
-
+const tbody = document.querySelector('tbody');
 const next = document.querySelector('#next');
 const previous = document.querySelector('#previous');
+let page =1 
 
-previous.style.display = 'none';
+previous.style.display = 'none'
 
-const getCoins = (start) => {
-  const url = `https://api.coinlore.com/api/tickers/?start=${start}&limit=10`;
-  return fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    data.data.map((coin) => {
-      const tbody = document.querySelector('tbody');
-      const tr = document.createElement('tr');
-      const td = document.createElement('td')
-      tr.innerHTML = 
-        ` <td data-title="💰 Coin">${coin.name}</td>
-          <td data-title="📄 Code">${coin.symbol}</td>
-          <td data-title="🤑 Price">&dollar; ${coin.price_usd}</td>
-          <td data-title="📉 Total Supply">${coin.tsupply} ${coin.symbol}</td>  `;
-      tbody.appendChild(tr);  
-    })
-  })
-  .catch(error => error)
-};
-
-getCoins(0);
-
-
-
-next.addEventListener('click', () => {
-  const tbody = document.querySelector('tbody');
-  let dataIndex = parseInt(next.dataset.index)
-  dataIndex += 10;
-  tbody.innerHTML = '';
-  getCoins(dataIndex);
-  previous.style.display = 'inline';
-  next.dataset.index = dataIndex;
-  previous.dataset.index = dataIndex - 10;
+previous.addEventListener('click', () =>{
+    page -= 1;
+    displayCoins(page);
+  next.style.display = 'block'
 })
 
-previous.addEventListener('click', () => {
-  const tbody = document.querySelector('tbody');
-  let dataIndex = parseInt(previous.dataset.index)
-  dataIndex -= 10;
-  tbody.innerHTML = '';
-  getCoins(dataIndex);
-  previous.dataset.index = dataIndex;
-  next.dataset.index = dataIndex + 10;
+next.addEventListener ('click', () => {
+  previous.style.display= 'block';
+  page += 1;
+  displayCoins(page);
+
+  if (page === 5) {
+      next.style.display = 'none';
+  }
 })
+const getCoins = async () => {
+  const response = await fetch('https://api.coinlore.com/api/tickers/?start=0&limit=50');
+  const data = await response.json();
+  coin = data.data;
+  displayCoins(1);
+}
+
+const displayCoins = (page) => {
+    tbody.innerHTML = "";
+    const rowPerPage = 10;
+    const begin = (page * rowPerPage) - rowPerPage;
+    const end = page * rowPerPage;
+    for (let i = begin; i < end; i+= 1) {
+        let tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${coin[i].name}</td>
+          <td>${coin[i].symbol}</td>
+          <td>$ ${coin[i].price_usd}</td>
+          <td>${coin[i].tsupply}</td>`;
+        tbody.appendChild(tr)
+    }
+}
+
+
+
+getCoins();
+
