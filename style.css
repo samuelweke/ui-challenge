@@ -69,7 +69,7 @@ nav ul a{
   padding: 5px;
 }
 
-nav ul a:focus{
+nav ul li a:focus{
   border: 1px solid #e2c48c;
 }
 
