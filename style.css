@@ -84,8 +84,9 @@ nav ul li a:focus{
 
 @media (max-width: 600px) {
   body {
-    margin-top: 6px;
-    margin-right: 10px;
+    margin-top: 8px;
+    margin-right: 12px;
+    margin-left: 4px;
   }
   .wrap-table{
     border-radius: 0;
