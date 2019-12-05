@@ -8,14 +8,17 @@
 const tbody = document.querySelector('tbody');
 const next = document.querySelector('#next');
 const previous = document.querySelector('#previous');
-let page =1 
+let page = 1; 
 
 previous.style.display = 'none'
 
 previous.addEventListener('click', () =>{
     page -= 1;
     displayCoins(page);
-  next.style.display = 'block'
+    next.style.display = 'block'
+    if(page == 1){
+      previous.style.display = 'none'
+    }
 })
 
 next.addEventListener ('click', () => {
