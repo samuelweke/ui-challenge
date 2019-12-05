@@ -8,6 +8,10 @@
 const tbody = document.querySelector('tbody');
 const next = document.querySelector('#next');
 const previous = document.querySelector('#previous');
+
+let limit = 100;
+const url = `https://api.coinlore.com/api/tickers/?start=0&limit=${limit}`;
+
 let page = 1; 
 
 previous.style.display = 'none';
@@ -25,13 +29,13 @@ next.addEventListener ('click', () => {
   previous.style.display= 'inline';
   page += 1;
   displayCoins(page);
-  if (page === 5) {
-      next.style.display = 'none';
+  if (page === limit/10) {
+    next.style.display = 'none';
   };
 });
 
 const getCoins = async () => {
-  const response = await fetch('https://api.coinlore.com/api/tickers/?start=0&limit=50');
+  const response = await fetch(url);
   const data = await response.json();
   coin = data.data;
   displayCoins(1);
