@@ -51,7 +51,7 @@ const displayCoins = (page) => {
       <td data-title="💰 Coin">${coin[i].name}</td>
       <td data-title="📄 Code">${coin[i].symbol}</td>
       <td data-title="🤑 Price">&dollar; ${coin[i].price_usd}</td>
-      <td data-title="📉 Total Supply">${coin[i].tsupply}</td> 
+      <td data-title="📉 Total Supply">${coin[i].tsupply} ${coin[i].symbol}</td> 
     `;
     tbody.appendChild(tr);
   };
